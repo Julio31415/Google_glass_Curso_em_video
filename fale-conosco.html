@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+</head>
+<script language="JavaScript" src="_javascript/funcoes.js"></script>
+<script>
+    function calc_total(){
+        var qtd = parseInt(document.getElementById('cqtd').value)
+        tot = qtd*1500;
+        document.getElementById('ctot').value = tot;
+    }
+</script>
+<body>
+<div id="interface">
+    <header id="cabecalho">
+
+        <hgroup>
+
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+
+        </hgroup>
+        <img id="icone" src="_imagens/glass-oculos-preto-med.png"> 
+       <nav id="menu">
+            <h1> Menu Principal</h1>
+                <Ul>
+                    <li onmouseover="mudafoto('_imagens/home.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="index.html">HOME</a></li>
+                    <LI onmouseover="mudafoto('_imagens/especificacoes.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></LI>
+                    <li onmouseover="mudafoto('_imagens/fotos.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudafoto('_imagens/multimidia.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="multimidia.html">Multimidia</a></li>
+                    <li onmouseover="mudafoto('_imagens/contato.png')" onmouseout="mudafoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale Conosco</a></li>
+                </Ul>
+       </nav>
+    </header>
+<form method="post" id="fcontato" action="mailto:jcfs360@gmail.com" oninput="calc_total();">
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+        <p>Nome:<input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="nome completo"></p>
+        <p>Senha:<input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="senha"></p>
+        <p>E-mail:<input type="email" name="tmail" id="cmail" size="20" maxlength="40" placeholder="email"></p>
+        <fieldset id="sexo"><legend>Sexo:</legend>
+            <input type="radio" name="tsexo" id="cmasc" checked><label for="cmasc">Masculino</label><br>
+            <input type="radio" name="tsexo" id="cfem"><label for="cfem">Feminino</label>
+        </fieldset>
+        <p>Data de Nascimento:<input type="date" name="tnasc" id="cnasc"></p>
+    </fieldset>
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+        <p>Logradouro:<input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="avenida,travessa,rua..."></input></p>
+        <p>Número: <input type="number" name="tnum" id="cnum" min="0" max="99999999"></p>
+        <p>Estado:<input type="text" name="test" id="cest"></p>
+    </fieldset>
+    <fieldset id="mensagem">
+        <legend>Mensagem do Usuário</legend>
+        <p>Grau de Urgência: MIN<input type="range" min="0" max="10" >MAX</p>
+        <p>Mensagem:<textarea cols="45" rows="7"></textarea></p>
+    </fieldset>
+    <fieldset id="pedido">
+        <legend id="pedido">Quero um Google Glass</legend>
+        <p><input type="checkbox" name="tped" id="cped" checked> <label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+        <p>Cor:<input type="color" name="tcolor" id="ccolor" value="#0000ff"></p>
+        <p> <input type="number" name="tqtd" id="cqtd" min="0" max="5" value="0">Quantidade:</p>
+        <p><input type="text" name="ttot" id="ctot" placeholder="total a pagar" readonly>Preço Total: R$</p>
+    </fieldset>
+</form>
+
+<input type="image" src="_imagens/botao-enviar.png">
+
+<footer id="rodape">
+    <p>Copyright 2013 - by Gustavo Guanabara</p>
+    <p><a>Facebook</a> | Twitter</p>
+</footer>
+</div>
+</body>
+</html>
